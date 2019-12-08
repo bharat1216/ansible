@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+  
+
+  tasks:
+       - name: install apache on client
+         apt: name=apache2 state=present
+       - name: service start
+         service: name=apache2 enabled=yes
+         
+...
